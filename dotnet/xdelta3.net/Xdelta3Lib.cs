@@ -33,7 +33,7 @@ namespace xdelta3.net
                     throw new InvalidOperationException($"Return value: {ret}");
                 }
 
-                return output.Take((int)outputSize).ToArray();
+                return new ReadOnlyMemory<byte>(output, 0, (int) outputSize);
             }
 
             throw new InvalidOperationException($"Return value: {ret}");
@@ -68,7 +68,7 @@ namespace xdelta3.net
                     throw new InvalidOperationException($"Return value: {ret}");
                 }
 
-                return output.Take((int)outputSize).ToArray();
+                return new ReadOnlyMemory<byte>(output, 0, (int) outputSize);
             }
 
             throw new InvalidOperationException($"Return value: {ret}");
